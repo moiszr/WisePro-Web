@@ -28,8 +28,9 @@ namespace WisePro_Web.Controllers
             return View();
         }
 
-        public async Task<IActionResult> LogOut()
+        public async Task<IActionResult> Logout()
         {
+            HttpContext.Session.Remove("_UserToken");
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Access");
         }

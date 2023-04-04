@@ -253,6 +253,10 @@
       "PackagePath": "staticwebassets\\tpl\\css\\dashboard.css.map"
     },
     {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\css\\dashboard.min.css",
+      "PackagePath": "staticwebassets\\tpl\\css\\dashboard.min.css"
+    },
+    {
       "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\css\\nucleo-icons.css",
       "PackagePath": "staticwebassets\\tpl\\css\\nucleo-icons.css"
     },
@@ -297,8 +301,16 @@
       "PackagePath": "staticwebassets\\tpl\\fonts\\nucleo.woff2"
     },
     {
-      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\apple-icon.png",
-      "PackagePath": "staticwebassets\\tpl\\img\\apple-icon.png"
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\Logo-D.png",
+      "PackagePath": "staticwebassets\\tpl\\img\\Logo-D.png"
+    },
+    {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\Logo-W.png",
+      "PackagePath": "staticwebassets\\tpl\\img\\Logo-W.png"
+    },
+    {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\apple-touch-icon.png",
+      "PackagePath": "staticwebassets\\tpl\\img\\apple-touch-icon.png"
     },
     {
       "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\bg1.jpg",
@@ -409,6 +421,10 @@
       "PackagePath": "staticwebassets\\tpl\\img\\curved-images\\white-curved.jpg"
     },
     {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\tpl\\img\\favicon.ico"
+    },
+    {
       "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\favicon.png",
       "PackagePath": "staticwebassets\\tpl\\img\\favicon.png"
     },
@@ -423,6 +439,26 @@
     {
       "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\home-decor-3.jpg",
       "PackagePath": "staticwebassets\\tpl\\img\\home-decor-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\icons\\cash-outline.svg",
+      "PackagePath": "staticwebassets\\tpl\\img\\icons\\cash-outline.svg"
+    },
+    {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\icons\\documents-outline.svg",
+      "PackagePath": "staticwebassets\\tpl\\img\\icons\\documents-outline.svg"
+    },
+    {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\icons\\grid-outline.svg",
+      "PackagePath": "staticwebassets\\tpl\\img\\icons\\grid-outline.svg"
+    },
+    {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\icons\\mail-outline.svg",
+      "PackagePath": "staticwebassets\\tpl\\img\\icons\\mail-outline.svg"
+    },
+    {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\icons\\stopwatch-outline.svg",
+      "PackagePath": "staticwebassets\\tpl\\img\\icons\\stopwatch-outline.svg"
     },
     {
       "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\img\\illustrations\\rocket-dark.png",
@@ -617,6 +653,18 @@
       "PackagePath": "staticwebassets\\tpl\\js\\core\\popper.min.js"
     },
     {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\js\\dashboard.js",
+      "PackagePath": "staticwebassets\\tpl\\js\\dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\js\\dashboard.js.map",
+      "PackagePath": "staticwebassets\\tpl\\js\\dashboard.js.map"
+    },
+    {
+      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\js\\dashboard.min.js",
+      "PackagePath": "staticwebassets\\tpl\\js\\dashboard.min.js"
+    },
+    {
       "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\js\\plugins\\Chart.extension.js",
       "PackagePath": "staticwebassets\\tpl\\js\\plugins\\Chart.extension.js"
     },
@@ -635,18 +683,6 @@
     {
       "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\js\\plugins\\smooth-scrollbar.min.js",
       "PackagePath": "staticwebassets\\tpl\\js\\plugins\\smooth-scrollbar.min.js"
-    },
-    {
-      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\js\\soft-ui-dashboard.js",
-      "PackagePath": "staticwebassets\\tpl\\js\\soft-ui-dashboard.js"
-    },
-    {
-      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\js\\soft-ui-dashboard.js.map",
-      "PackagePath": "staticwebassets\\tpl\\js\\soft-ui-dashboard.js.map"
-    },
-    {
-      "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\js\\soft-ui-dashboard.min.js",
-      "PackagePath": "staticwebassets\\tpl\\js\\soft-ui-dashboard.min.js"
     },
     {
       "Id": "C:\\Users\\moise\\Documents\\WisePro\\WisePro-Web\\WisePro-Web\\wwwroot\\tpl\\scss\\soft-ui-dashboard.scss",
