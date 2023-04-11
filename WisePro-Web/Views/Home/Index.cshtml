@@ -1,8 +1,30 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using System.Security.Claims;
+@{
+    var user = Context.User;
+    var userData = new Dictionary<string, string>();
+
+    if (user.Identity.IsAuthenticated)
+    {
+        userData["uid"] = user.FindFirstValue("uid");
+        userData["displayName"] = user.FindFirstValue("displayName");
+        userData["email"] = user.FindFirstValue("email");
+        userData["emailVerified"] = user.FindFirstValue("emailVerified");
+        userData["photoURL"] = user.FindFirstValue("photoURL");
+    }
 }
+<script>
+    setUserData(@Json.Serialize(userData));
+    function setUserData(userData) {
+        if (userData) {
+            localStorage.setItem('user', JSON.stringify(userData));
+        } else {
+            localStorage.removeItem('user');
+        }
+    }
+</script>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+

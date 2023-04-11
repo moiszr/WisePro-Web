@@ -192,7 +192,7 @@
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         <li class="nav-item d-flex align-items-center">
-                            <a class="nav-link text-body font-weight-bold px-0" asp-area="" asp-controller="Home" asp-action="LogOut">
+                            <a class="nav-link text-body font-weight-bold px-0" asp-area="" asp-controller="Home" asp-action="LogOut" onclick="logout()">
                                 <i class="fa fa-user me-sm-1"></i>
                                 <span class="d-sm-inline d-none">LogOut</span>
                             </a>
@@ -240,6 +240,20 @@
                 damping: '0.5'
             }
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
+
+    <script>
+        function logout() {
+            setUserData(null);
+        }
+
+        function setUserData(userData) {
+            if (userData) {
+                localStorage.setItem('user', JSON.stringify(userData));
+            } else {
+                localStorage.removeItem('user');
+            }
         }
     </script>
     <script src="~/tpl/js/dashboard.min.js?v=1.1.1"></script>
