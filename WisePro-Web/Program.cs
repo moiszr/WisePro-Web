@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using WisePro_Web.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,10 @@ Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", pathToCrede
 
 // Agregar servicios al contenedor.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ITask_Services, Task_services>();
+builder.Services.AddScoped<INote_Services, Note_Services>();
+builder.Services.AddScoped<IFinance_Services, Finance_Services>();
+
 
 // Autenticación de cookies en ASP.NET Core para usuarios.
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
