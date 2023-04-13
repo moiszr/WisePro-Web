@@ -1,0 +1,233 @@
+﻿@model Resultask
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/tpl/css/task.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+        <div class="header">
+            <h2>Tareas</h2>
+            <div class="search">
+                <input type="text" placeholder="Buscar">
+                <button class="btn-search">Buscar</button>
+            </div>
+            <div class="view-buttons">
+                <button class="list-btn active" data-view="list">Lista</button>
+                <button class="kanban-btn" data-view="kanban">Kanban</button>
+            </div>
+            <button class="btn-create">Crear tarea</button>
+        </div>
+        <div class="modal">
+            <div class="modal-content">
+                <div class="cover-photo"></div>
+                <form method="post" asp-action="CreateTask">
+                    <input asp-for="task.tasks_id" type="hidden" />
+                    <item lines="none">
+                        <textarea asp-for="task.title" type="text" class="task-title-input" placeholder="Untitled"></textarea>
+                    </item>
+
+                    <list>
+                        <item lines="none" class="task-item">
+                            <span class="iconify" data-icon="ion:calendar-clear-outline" style="color: #a5a4a1;"></span>
+                            <label class="task-label">Creación</label>
+                            <input class="task-input" type="date" asp-for="task.creation_date" placeholder="Empty"></input>
+                        </item>
+
+                        <item lines="none" class="task-item">
+                            <span class="iconify" data-icon="ion:list-outline" style="color: #a5a4a1;"></span>
+                            <label class="task-label">Tipo</label>
+                            <select class="task-input" asp-for="task.activity" placeholder="Empty">
+                                <option value="Cuidado Personal">Cuidado Personal</option>
+                                <option value="Estudios universidad">Estudios universidad</option>
+                                <option value="Crecimiento personal">Crecimiento personal</option>
+                                <option value="Salud y bienestar">Salud y bienestar</option>
+                                <option value="Finanzas personales">Finanzas personales</option>
+                                <option value="Hobbies y pasatiempos">Hobbies y pasatiempos</option>
+                                <option value="Desarrollo profesional">Desarrollo profesional</option>
+                                <option value="Mascotas">Mascotas</option>
+                                <option value="Hogar">Hogar</option>
+                                <option value="Compromiso social">Compromiso social</option>
+                                <option value="Eventos o reuniones">Eventos o reuniones</option>
+                                <option value="Viajes y aventuras">Viajes y aventuras</option>
+                                <option value="Crecimiento personal">Crecimiento personal</option>
+                            </select>
+                        </item>
+
+                        <item lines="none" class="task-item">
+                            <span class="iconify" data-icon="mdi:checkbox-outline" style="color: #a5a4a1;"></span>
+                            <label class="task-label">Prioridad</label>
+                            <select class="task-input" asp-for="task.priority" placeholder="Empty">
+                                <option value="Baja">Baja</option>
+                                <option value="Media">Media</option>
+                                <option value="Alta">Alta</option>
+                            </select>
+                        </item>
+
+                        <item lines="none" class="task-item">
+                            <span class="iconify" data-icon="ion:calendar-number-outline" style="color: #a5a4a1;"></span>
+                            <label class="task-label">Expiración</label>
+                            <input class="task-input" type="date" asp-for="task.expiration_date" placeholder="Empty"></input>
+                        </item>
+
+                        <item lines="none" class="task-item">
+                            <span class="iconify" data-icon="ion:checkmark-done-outline" style="color: #a5a4a1;"></span>
+                            <label class="task-label">Estatus</label>
+                            <select class="task-input" asp-for="task.status" placeholder="Empty">
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En progreso">En progreso</option>
+                                <option value="Completada">Completada</option>
+                            </select>
+                        </item>
+
+                        <item lines="none" class="task-item">
+                            <span class="iconify" data-icon="ion:document-text-outline" style="color: #a5a4a1;"></span>
+                            <label class="task-label">Descripción</label>
+                            <textarea type="text" class="task-input" asp-for="task.description" placeholder="Empty"></textarea>
+
+                        </item>
+                    </list>
+                    <div class="btn-container">
+                        <button type="submit" class="btn guardar">Guardar</button>
+                        <button type="button" class="btn close-btn">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="tasks">
+            <div class="list-view">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Descripción</th>
+                            <th>Prioridad</th>
+                            <th>Tipo</th>
+                            <th>Estatus</th>
+                            <th>Creación</th>
+                            <th>Expiración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se generan las tareas en la vista de lista -->
+                        @foreach (var item in Model.Tasks)
+                        {
+                            <tr>
+                                <td>@item.title</td>
+                                <td>@item.description</td>
+                                <td>@item.priority</td>
+                                <td>@item.activity</td>
+                                <td>@item.status</td>
+                                <td>@item.creation_date</td>
+                                <td>@item.expiration_date</td>
+                                <td>
+                                    <a asp-action="DeleteTask" asp-controller="Task" asp-route-task_id="@item.tasks_id" class="btn delete">Delete</a>
+                                </td>
+                                <td>
+                                <a asp-action="Edittask" asp-controller="Task" asp-route-task_id="@item.tasks_id" class="btn-create">Edit</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="kanban-view">
+                <div class="kanban-board">
+                    <div class="kanban-column">
+                        <h3>Pendientes</h3>
+                        <!-- Aquí se generan las tareas en la columna "Pendientes" de la vista kanban -->
+                        @foreach (var item in Model.Tasks)
+                        {
+                            @if (item.status == "Pendiente")
+                            {
+                                <div class="task-card">
+                                    <div class="task-header">
+                                        <span class="task-id">#@item.tasks_id</span>
+                                        <span class="task-status">Pendiente</span>
+                                    </div>
+                                    <h4 class="task-title">@item.title</h4>
+                                    <p class="task-description">@item.description</p>
+                                    <div class="task-footer">
+                                        <span class="task-due-date">Fecha límite: @item.expiration_date</span>
+                                    </div>
+                                    <div class="kanban-buttons">
+                                        <button class="kanban-button">Back</button>
+                                        <button class="kanban-button">Next</button>
+                                        <a asp-action="DeleteTask" asp-controller="Task" asp-route-task_id="@item.tasks_id" class="kanban-button">Delete</a>
+                                    </div>
+
+
+                                </div>
+                            }
+                        }
+                    </div>
+                    <div class="kanban-column">
+                        <h3>En proceso</h3>
+                        <!-- Aquí se generan las tareas en la columna "En proceso" de la vista kanban -->
+                        @foreach (var item in Model.Tasks)
+                        {
+                            @if (item.status == "En proceso")
+                            {
+                                <div class="task-card">
+                                    <div class="task-header">
+                                        <span class="task-id">#@item.tasks_id</span>
+                                        <span class="task-status">En proceso</span>
+                                    </div>
+                                    <h4 class="task-title">@item.title</h4>
+                                    <p class="task-description">@item.description</p>
+                                    <div class="task-footer">
+                                        <span class="task-due-date">Fecha límite: @item.expiration_date</span>
+                                    </div>
+                                    <div class="kanban-buttons">
+                                        <button class="kanban-button">Back</button>
+                                        <button class="kanban-button">Next</button>
+                                        <a asp-action="DeleteTask" asp-controller="Task" asp-route-task_id="@item.tasks_id" class="kanban-button">Delete</a>
+                                    </div>
+
+
+                                </div>
+                            }
+                        }
+                    </div>
+                    <div class="kanban-column">
+                        <h3>Completadas</h3>
+                        <!-- Aquí se generan las tareas en la columna "Completadas" de la vista kanban -->
+                        @foreach (var item in Model.Tasks)
+                        {
+                            @if (item.status == "Completadas")
+                            {
+                                <div class="task-card">
+                                    <div class="task-header">
+                                        <span class="task-id">#@item.tasks_id</span>
+                                        <span class="task-status">Completadas</span>
+                                    </div>
+                                    <h4 class="task-title">@item.title</h4>
+                                    <p class="task-description">@item.description</p>
+                                    <div class="task-footer">
+                                        <span class="task-due-date">Fecha límite: @item.expiration_date</span>
+                                    </div>
+                                    <div class="kanban-buttons">
+                                        <button class="kanban-button">Back</button>
+                                        <button class="kanban-button">Next</button>
+                                        <a asp-action="DeleteTask" asp-controller="Task" asp-route-task_id="@item.tasks_id" class="kanban-button">Delete</a>
+                                    </div>
+
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="~/tpl/js/task.js"></script>
+
+</body>
+
+</html>

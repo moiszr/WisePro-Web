@@ -1,0 +1,362 @@
+﻿
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.search button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.view-buttons button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+    .view-buttons button.active {
+        background-color: #ccc;
+        color: #333;
+    }
+
+.btn-create {
+    padding: 10px 15px;
+    background-color: #1f5178;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.tasks {
+    margin-top: 20px;
+}
+
+.list-view table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.list-view th, .list-view td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.list-view th {
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+.kanban-view {
+    display: none;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.kanban-board {
+    display: flex;
+    justify-content: space-around;
+}
+.kanban-column {
+    flex: 1;
+    margin-right: 20px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+    .kanban-column h3 {
+        margin-top: 0;
+    }
+
+.task-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+    .task-card .task-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .task-card .task-header .task-id {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .task-card .task-header .task-status {
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+    .task-card .task-title {
+        margin: 10px 0;
+    }
+
+    .task-card .task-description {
+        margin-bottom: 10px;
+    }
+
+    .task-card .task-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .task-card .task-footer .task-due-date {
+            font-size: 14px;
+        }
+
+.task .task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .task .task-header h4 {
+        margin: 0;
+    }
+
+    .task .task-header .status {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #28a745;
+        color: #fff;
+        padding: 5px 10px;
+    }
+
+
+
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea,
+select,
+input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button[type="submit"]:hover {
+        background-color: #0062cc;
+    }
+/* Estilos para los botones en la vista kanban */
+.kanban-buttons {
+    margin-top: 20px;
+}
+
+.kanban-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    cursor: pointer;
+}
+
+    .kanban-button:hover {
+        background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+    }
+
+    .kanban-button:last-child {
+        margin-right: 0; /* Elimina el margen derecho del último botón */
+    }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Estilos de la toolbar */
+.custom-toolbar {
+    --background: #ffffff;
+    --color: #4d4d4d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 400;
+}
+
+    .custom-toolbar .task-title {
+        padding-left: 0;
+        margin-left: 0;
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    .custom-toolbar ion-icon {
+        font-size: 1.2rem;
+    }
+
+/* Estilos del Formulario */
+.task-title-input {
+    margin-top: 30px;
+    margin-left: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    --padding-start: 0;
+    --placeholder-color: #d1d1d1;
+    --background: transparent;
+    --border-style: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    resize: none;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+
+.task-item {
+    margin: 0 4px 0 0;
+    display: flex;
+    align-items: center;
+    color: #a5a4a1;
+}
+
+.task-icon {
+    flex: 0 0 auto;
+    width: 30px;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.textarea {
+    margin-top: -14px;
+}
+
+.task-label {
+    flex: 0 0 auto;
+    width: 90px;
+    padding-left: 10px;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.task-input {
+    flex: 1 1 auto;
+    font-size: 0.9rem;
+    --padding-start: 0;
+    --placeholder-color: #a5a4a1;
+    color: #4d4d4d;
+    --background: transparent;
+    --border-style: none;
+    margin-left: 20px;
+    margin-top: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+select {
+    --padding-end: 0;
+    --background: transparent;
+    --border-style: none;
+}
+
+    select::part(icon) {
+        display: none;
+    }
+
+
+
+.modal-content {
+    background-color: #fff;
+    margin: 7% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+form {
+    margin-left: 3%;
+    width: 95%;
+}
+/* Estilos portada */
+.cover-photo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1f5178;
+    width: 100%;
+    height: 90px;
+}
+
+/* Estilos para los botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+    .btn.guardar {
+        background-color: #fbcf33;
+    }
+
+    .btn.close-btn {
+        background-color: #abadaf;
+    }
+    .btn.delete {
+        background-color: #861b1b;
+    }
+.btn-container {
+    margin-left: 50%;
+}

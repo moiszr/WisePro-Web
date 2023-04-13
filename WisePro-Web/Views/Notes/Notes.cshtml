@@ -1,0 +1,36 @@
+﻿@model Resultnote
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Notas</title>
+    <link href="~/tpl/css/notes.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-card">
+
+        <div class="card">
+            <form id="formulario-notas" method="post" asp-action="Createnote">
+                <input asp-for="note.note_id" type="hidden" />
+                <input type="text" asp-for="note.title" id="input-titulo" placeholder="Título">
+                <textarea id="input-descripcion" asp-for="note.description" placeholder="Descripción"></textarea>
+                <button type="submit" id="button-add">Guardar</button>
+            </form>
+
+        </div>
+
+    </div>
+    <div class="container-card-result">
+         @foreach (var item in Model.notes)
+         {
+            <div class="card">
+                <div class="contenido-card">
+                    <h4>@item.title</h4>
+                    <p>@item.description</p>
+                </div>
+            </div>
+         }
+    </div>
+    <script src="~/tpl/js/notes.js"></script>
+</body>
+</html>
